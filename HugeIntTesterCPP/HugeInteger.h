@@ -12,7 +12,7 @@ public:
 	HugeInteger( long = 0 ); // conversion constructor & no arg constructor
 	HugeInteger(const std::string & str); // constructor for a string to convert to integer
 	
-										  // addition operator; HugeInteger + HugeInteger 
+	// addition operator; HugeInteger + HugeInteger 
 	HugeInteger add(const HugeInteger &) const;
 	
 	// addition operator; HugeInteger + Int 

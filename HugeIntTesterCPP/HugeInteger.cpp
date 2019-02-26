@@ -6,7 +6,13 @@ using namespace std;
 
 
 HugeInteger::HugeInteger(long n ) { // conversion constructor & no arg constructor
-
+	for (int i = 0; i < 40; ++i) {
+		integer[i] = 0;
+	}
+	for (int i = 39; i >= 0 && n != 0; --i) {
+		integer[i] = static_cast<short>(n % 10);
+		n /= 10;
+	}
 }
 
 HugeInteger::HugeInteger(const string & str) { // constructor for a string to convert to integer
