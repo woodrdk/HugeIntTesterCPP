@@ -18,5 +18,13 @@
     <ClCompile Include="..\..\..\..\Downloads\HugeIntegerTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HugeInteger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HugeInteger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
