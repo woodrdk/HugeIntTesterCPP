@@ -31,6 +31,8 @@ public:
 
 	void output() const; // output
 
+	void input(const std::string &); // input
+
 	~HugeInteger();			
 
 private: 

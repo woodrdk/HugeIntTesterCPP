@@ -16,17 +16,31 @@ HugeInteger::HugeInteger(long n ) { // conversion constructor & no arg construct
 }
 
 HugeInteger::HugeInteger(const string & str) { // constructor for a string to convert to integer
-
+	input(str);
 }
 
 HugeInteger HugeInteger::add(const HugeInteger & op2) const {
 	 HugeInteger newHuge;
+	 
+	 int carry = 0;
+	 for (int i = 39; i >= 0; --i) {
+		 newHuge.integer[i] = integer[i] + op2.integer[i] + carry;
+		 if (newHuge.integer[i] > 9) {
+			 newHuge.integer[i] % 10;
+			 carry = 1;
+		 }
+		 else {
+			 carry = 0;
+		 }
+	 }
+
 	 return newHuge;
 }
 
 // returns HugeInteger + int
 HugeInteger HugeInteger::add(int n) const {
 	HugeInteger newHuge;
+
 	return newHuge;
 }
 
@@ -65,6 +79,20 @@ void HugeInteger::output() const
 	else
 		for (; i < 40; ++i) // display the HugeInteger
 			cout << integer[i];
+}
+
+void HugeInteger::input(const string & str) {
+	// initiallize array to zero
+	for (int i = 0; i < 40; ++i) {
+		integer[i] = 0;
+	}
+
+	int length = str.size();
+	for (int i = 40 - length, k = 0; i < 40; ++i, ++k) {
+		if (isdigit(str[k])) {
+			integer[i] = str[k] - '0';
+		}
+	}
 }
 
 HugeInteger::~HugeInteger()
