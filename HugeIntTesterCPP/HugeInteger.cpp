@@ -18,6 +18,36 @@ HugeInteger HugeInteger::add(const HugeInteger & op2) const {
 	 return newHuge;
 }
 
+// returns HugeInteger + int
+HugeInteger HugeInteger::add(int n) const {
+	HugeInteger newHuge;
+	return newHuge;
+}
+
+// returns HugeInteger + string
+HugeInteger HugeInteger::add(const std::string & str) const {
+	HugeInteger newHuge;
+	return newHuge;
+}
+
+// returns HugeInteger - HugeInteger
+HugeInteger HugeInteger::subtract(const HugeInteger & op2) const {
+	HugeInteger newHuge;
+	return newHuge;
+}
+
+// returns HugeInteger - int
+HugeInteger HugeInteger::subtract(int n) const {
+	HugeInteger newHuge;
+	return newHuge;
+}
+
+// returns HugeInteger - string
+HugeInteger HugeInteger::subtract(const std::string & str) const {
+	HugeInteger newHuge;
+	return newHuge;
+}
+
 HugeInteger::~HugeInteger()
 {
 }
