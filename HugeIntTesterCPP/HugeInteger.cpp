@@ -13,6 +13,11 @@ HugeInteger::HugeInteger(const string & str) { // constructor for a string to co
 
 }
 
+HugeInteger HugeInteger::add(const HugeInteger & op2) const {
+	 HugeInteger newHuge;
+	 return newHuge;
+}
+
 HugeInteger::~HugeInteger()
 {
 }
