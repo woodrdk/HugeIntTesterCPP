@@ -40,7 +40,17 @@ HugeInteger HugeInteger::add(const HugeInteger & op2) const {
 // returns HugeInteger + int
 HugeInteger HugeInteger::add(int n) const {
 	HugeInteger newHuge;
-
+	int carry = 0;
+	for (int i = 39; i >= 0; --i) {
+		newHuge.integer[i] = integer[i] + n + carry;
+		if (newHuge.integer[i] > 9) {
+			newHuge.integer[i] % 10;
+			carry = 1;
+		}
+		else {
+			carry = 0;
+		}
+	}
 	return newHuge;
 }
 
@@ -53,6 +63,18 @@ HugeInteger HugeInteger::add(const std::string & str) const {
 // returns HugeInteger - HugeInteger
 HugeInteger HugeInteger::subtract(const HugeInteger & op2) const {
 	HugeInteger newHuge;
+
+	for (int i = 39; i > 0; --i) {
+		if (integer[i] < op2.integer[i]) {
+			newHuge.integer[i] = integer[i] + 10;
+			newHuge.integer[i - 1] = integer[i - 1] - 1;
+			newHuge.integer[i] = integer[i] - op2.integer[i];
+		}
+		else {
+			newHuge.integer[i] = integer[i] - op2.integer[i];
+		}
+	}
+
 	return newHuge;
 }
 
@@ -65,6 +87,7 @@ HugeInteger HugeInteger::subtract(int n) const {
 // returns HugeInteger - string
 HugeInteger HugeInteger::subtract(const std::string & str) const {
 	HugeInteger newHuge;
+
 	return newHuge;
 }
 
