@@ -1,7 +1,7 @@
 
 #include <string>
 #include "HugeInteger.h"
-
+#include <iostream>
 using namespace std;
 
 
@@ -46,6 +46,19 @@ HugeInteger HugeInteger::subtract(int n) const {
 HugeInteger HugeInteger::subtract(const std::string & str) const {
 	HugeInteger newHuge;
 	return newHuge;
+}
+
+// overloaded output operator
+void HugeInteger::output() const
+{
+	int i; // used for looping
+	for (i = 0; (i < 40) && (integer[i] == 0); i++)
+		; // skip leading zeros
+	if (i == 40)
+		cout << 0;
+	else
+		for (; i < 40; ++i) // display the HugeInteger
+			cout << integer[i];
 }
 
 HugeInteger::~HugeInteger()
